@@ -1,3 +1,3 @@
 ## Patika.dev Agency Project
 
-[Template Linki:](https://startbootstrap.com/theme/agency)
+Template Link: [https://startbootstrap.com/theme/agency](https://startbootstrap.com/theme/agency)
