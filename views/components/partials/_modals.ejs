@@ -1,0 +1,49 @@
+
+<% for(let i=0; i < projects.length; i++) {%>
+    <div class="portfolio-modal modal fade" id="portfolioModal<%= projects[i]._id%>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase"><%= projects[i].name%></h2>
+                                <p class="item-intro text-muted"><%= projects[i].subtitle%></p>
+                                <img class="img-fluid d-block mx-auto" src="<%= projects[i].image%>" alt="..." />
+                                <p><%= projects[i].description%></p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        <%= projects[i].client %>
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        <%= projects[i].category %>
+                                    </li>
+                                </ul>
+
+                                <div class="col-md-12 mb-2 mt-2">
+                                    <a class="mx-2 btn btn-primary btn-lg col-md-4 text-uppercase mb-2 mt-3 mx-3" type="button" data-bs-toggle="modal"href="#editProjectModal<%= projects[i]._id%>">
+                                        <i class="far fa-edit me-1"></i>
+                                        Edit
+                                    </a>
+    
+                                    <a class="mx-2 btn btn-danger btn-lg col-md-4 text-uppercase mb-2 mt-3 mx-3" href="/projects/<%= projects[i]._id%>?_method=DELETE" onclick="return confirm('Are you sure?')"">
+                                        <i class="fas fa-trash-alt me-1"></i>
+                                        Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./modals/_editProjectModal', {project: projects[i]}) -%>
+<% } %>
+
+
+<%- include('./modals/_addProjectModal') -%>

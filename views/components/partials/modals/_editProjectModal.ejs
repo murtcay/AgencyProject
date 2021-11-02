@@ -1,0 +1,63 @@
+<div class="portfolio-modal modal fade" id="editProjectModal<%= project._id%>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Edit Project</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <form action="/projects/<%= project._id%>?_method=PUT" method="post" enctype="multipart/form-data">
+                                <div class="row align-items-stretch mb-5">
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;" for="name<%= project._id%>">Project Name *</label>
+                                        <input class="form-control rounded-0" id="name<%= project._id%>" name="name" type="text"  value="<%= project.name%>" required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="subtitle<%= project._id%>">Subtitle *</label>
+                                        <input class="form-control rounded-0" id="subtitle<%= project._id%>" name="subtitle" type="text" value="<%= project.subtitle%>"  required />
+                                    </div>
+                                    <div  class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="description<%= project._id%>"> Description *</label>
+                                        <div class="form-group form-group-textarea">
+                                            <!-- Message input-->
+                                            <textarea rows="8" class="form-control rounded-0" id="description<%= project._id%>" name="description" required><%= project.description%></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="client_name<%= project._id%>">Client *</label>
+                                        <input class="form-control rounded-0" id="client_name<%= project._id%>" name="client" type="text"  value="<%= project.client%>"  required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;" for="category_name<%= project._id%>">Category *</label>
+                                        <input class="form-control rounded-0" id="category_name<%= project._id%>" name="category" type="text"  value="<%= project.category%>" required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <input type="file" id="image-<%= project._id%>" name="image" onchange="PreviewImage('<%= project._id%>');" class="img-fluid d-block mx-0 rounded-0 ">
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <img  src="<%= project.image%>" class="img-fluid d-block mx-auto" id="uploaded-image-<%= project._id%>"  />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <button class="mx-2 btn btn-primary btn-lg col-md-4 text-uppercase mb-2 mt-3 mx-3" type="submit">
+                                            <i class="far fa-check-square me-1"></i>
+                                            Save
+                                        </button>
+
+                                        <button class="mx-2 btn btn-danger btn-lg col-md-4 text-uppercase mb-2 mt-3 mx-3" data-bs-dismiss="modal" type="reset" >
+                                            <i class="fas fa-times me-1"></i>
+                                            Cancel
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="portfolio-modal modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+            
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="modal-body">
+                            <h2 class="text-uppercase">Add a Project</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <form action="/add-project" method="post" enctype="multipart/form-data">
+                                <div class="row align-items-stretch mb-5">
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;" for="nameProject">Project Name *</label>
+                                        <input class="form-control rounded-0" id="nameProject" name="name" type="text"  required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="subtitleProject">Subtitle *</label>
+                                        <input class="form-control rounded-0" id="subtitleProject" name="subtitle" type="text"  required />
+                                    </div>
+                                    <div  class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="descriptionProject"> Description *</label>
+                                        <div class="form-group form-group-textarea">
+                                            <!-- Message input-->
+                                            <textarea rows="8" class="form-control rounded-0" id="descriptionProject" name="description" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;"  for="clientProject">Client *</label>
+                                        <input class="form-control rounded-0" id="clientProject" name="client" type="text"  required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <label class="mx-0" style="float:left;" for="categoryProject">Category *</label>
+                                        <input class="form-control rounded-0" id="categoryProject" name="category" type="text"  required />
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <input type="file" id="image-addProject" name="image" onchange="PreviewImage('addProject');" data-buttonText="Your label here." class="img-fluid d-block mx-0 rounded-0 ">
+                                    </div>
+                                    <div class="col-md-12 mb-2 mt-2">
+                                        <img class="img-fluid d-block mx-auto" id="uploaded-image-addProject" />
+                                    </div>
+                                    <button class="btn btn-primary btn-lg col-md-6 mx-auto text-uppercase mb-2 mt-3" data-bs-dismiss="modal" type="submit">
+                                        <i class="far fa-plus-square me-1"></i>
+                                        Add
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
